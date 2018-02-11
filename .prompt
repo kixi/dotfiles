@@ -1,0 +1,9 @@
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+red=$(tput setaf 1)
+green=$(tput setaf 10)
+reset=$(tput sgr0)
+PS1="\[$red\]\$(parse_git_branch)\[$green\] \W \$ \[$reset\]"
+export PS1
