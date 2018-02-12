@@ -5,5 +5,5 @@ parse_git_branch() {
 green=$(tput setaf 10)
 yellow=$(tput setaf 11)
 reset=$(tput sgr0)
-PS1="\[$green\]\$(parse_git_branch)\[$yellow\] \W \$ \[$reset\]"
+PS1="\[$green\]\$(parse_git_branch)\[$yellow\] \w \$ \[$reset\]"
 export PS1
